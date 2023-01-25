@@ -1,0 +1,34 @@
+#Practice with Data types, Booleans but non-conditional, and defining Variables
+#Define a Variable for Current Temperature
+current_temp = 72
+
+#Define Variable for whether air conditioning is on
+air_conditioning = True
+
+#Define Variable for a Desired Temperature
+desired_temp = 75
+
+#Create a temp_diff that calculates difference between current and desired temp
+temp_diff = desired_temp - current_temp
+
+#String Describing current temp, is airconditioner on, and difference between
+currenttemp_status = f"The current temperature in the office is {current_temp} degrees farenheit."
+currenttemp_status += f"\nThe aircondioning is {'on' if air_conditioning else 'off'}."
+currenttemp_status += f"\nCurrent temperature is {'above' if temp_diff > 0 else 'below'} the desired temperature of {desired_temp}"
+currenttemp_status += f"\nThe different between the two is {temp_diff} degrees"
+
+print(currenttemp_status)
+
+#Create a temp_adjustment variable
+temp_adjustment =  current_temp + temp_diff
+
+#mention the temperature has been changed to the desired temp
+new_temp = f"The team adjusted the temperature to be {temp_adjustment}"
+
+print(new_temp)
+
+#Create a string updating the temp status
+temp_report = f"The temperature has been adjusted by {temp_diff}"
+temp_report += f"\nThe new temperature is {temp_adjustment} degrees and it {'meets' if temp_adjustment == desired_temp else 'does not meet'} the desired temperature of {desired_temp}."
+
+print(temp_report)
