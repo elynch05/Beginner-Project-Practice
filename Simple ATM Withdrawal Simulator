@@ -1,0 +1,24 @@
+#Using only Booleans, Data types, Conditions and an input
+
+#User enters current bank balance
+current_bal = float(input("What is your current balance?: "))
+
+#How much does person want to take out
+withdrawl_amount = float(input("How much are you planning on withdrawing?: "))
+
+#Function that checks whether the withdrawl amount is less than current balance to check if it's allowed
+def check_withdrawl(current_bal, withdrawl_amount):
+    if withdrawl_amount > current_bal:
+        return False
+    else:
+        return True
+
+#check if the withdrawal can be made by passing in the account balance and withdrawal amount as arguments
+withdrawl_possible = check_withdrawl(current_bal, withdrawl_amount)
+
+#Print the status
+if withdrawl_possible:
+    new_balance = current_bal - withdrawl_amount
+    print("Withdrawl is possible, your new balance is $" + str(new_balance))
+else:
+    print("Withdrawl is not possible, Your balance is still $" + str(current_bal) + ". Please enter a smaller amount to withdraw")
