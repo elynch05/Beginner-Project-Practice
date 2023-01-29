@@ -1,0 +1,78 @@
+#Start a list with a few sample items
+todo_list = ["Get Breakfast", "Groceries", "Study"]
+
+#function to add a new item
+def add_item(item):
+    todo_list.append(item)
+    print(item, "Added to list\n")
+    
+def remove_item(item):
+    if item in todo_list:
+        todo_list.remove(item)
+        print(item, "Removed from List\n")
+    else:
+        print("Item not in the list, Please select a different item\n")
+    
+def view_list():
+    for item in todo_list:
+        print(item)
+    if todo_list == []:
+        print("Your list is empty\n")
+
+def check_item(item):
+    return item in todo_list
+
+def clear_list():
+    todo_list.clear()
+    print("Your list has been cleared\n")
+    
+def filter_list(condition):
+    filtered_list = [item for item in todo_list if condition(item)]
+    return filtered_list
+
+# Function to filter the to-do list based on a condition
+running = True
+
+#Main loop of the program
+while running: #says while
+    # Print menu of options
+    print('What would you like to do?')
+    print('1. Add item')
+    print('2. Remove item')
+    print('3. View list')
+    print('4. Check item')
+    print('5. Clear list')
+    print('6. Quit')
+    # Ask user to select an option
+    choice = int(input("Select an option from the menu: "))
+    
+    #Handle the users choice
+    if choice == 1:
+        item = input("Please type an item to include: ")
+        add_item(item)
+        
+    elif choice == 2:
+        item = input("Please type an item to remove: ")
+        remove_item(item)
+        print("Item removed from list")
+        
+    elif choice == 3:
+        view_list()
+    
+    elif choice == 4:
+        item = input("Please select an item to check for: ")
+        check_item(item)
+        if item in todo_list:
+            print("Your item is in the list: ", item)
+        else:
+            print("Your item is not in the list, try again\n")
+        
+    elif choice == 5:
+        clear_list()
+    
+    elif choice == 6:
+        running = False
+        print("Thank you for using my list!")
+        
+    else:
+        print("\nInvalid Choice\n")
