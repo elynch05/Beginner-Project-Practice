@@ -1,0 +1,43 @@
+#Programming a Text Analyser
+#input any text, any length so just an input
+text = input("Please input any text you like: ").lower()
+letters = []
+#ask the user for any 3 random letters
+letter1 = input("Provide any letter: ").lower()
+letter2 = input("Provide a different letter: ").lower()
+letter3 = input("Provide a different letter: ").lower()
+#process and result 5 analyses
+#1. how many time each of those letters appear
+letters.append(letter1)
+letters.append(letter2)
+letters.append(letter3)
+
+letter_count1 = text.count(letters[0])
+letter_count2 = text.count(letters[1])
+letter_count3 = text.count(letters[2])
+print(f"There are {letter_count1} {letter1}'s in the inputted text.")
+print(f"There are {letter_count2} {letter2}'s in the inputted text.")
+print(f"There are {letter_count2} {letter3}'s in the inputted text.")  
+    
+#2. how many words in total
+total_words = text.split()
+total_words = len(total_words)
+print(f"There are {total_words} total words in this text")
+
+#3. first and last letters of the text
+first_letter = text[0]
+last_letter = text[-1]
+print(f"The first letter of this text is {first_letter}, and the last letter is {last_letter}")
+
+#4 show the inverted text
+text_reverse = text.split()
+text_reverse.reverse()
+backwards_text = " ".join(text_reverse)
+print("The next line is the text in reverse order:\n")
+print(backwards_text)
+    
+#5 tell us if the word python in the text
+if "Python".lower() in text:
+    print(f"The word Python is in the text")
+else:
+    print("The word Python is not in text")
